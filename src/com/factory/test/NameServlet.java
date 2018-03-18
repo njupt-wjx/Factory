@@ -1,7 +1,12 @@
-package com.factory.xx;
+package com.factory.test;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -9,6 +14,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.factory.db.JDBCConnection;
 import com.sun.javafx.iio.ImageStorage;
 
 /**
@@ -17,7 +23,7 @@ import com.sun.javafx.iio.ImageStorage;
 @WebServlet("/NameServlet")
 public class NameServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
+	
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -38,6 +44,12 @@ public class NameServlet extends HttpServlet {
 		out.print("<html><head>");
 		out.print(name);
 		out.print("</body></head></html>");
+		
+		
+		String sql = "insert into user (UserName) values('"+name.toString()+"')";
+		JDBCConnection db = new JDBCConnection();   
+		db.insert2Database(sql);
+		db.closeConnection();
 		
 		
 		System.out.println("name from POST method: " + name );
