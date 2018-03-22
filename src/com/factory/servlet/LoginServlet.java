@@ -9,6 +9,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.factory.db.JDBCConnection;
 
@@ -48,6 +49,9 @@ public class LoginServlet extends HttpServlet {
 		String admin = request.getParameter("admin");
 		String pwd = request.getParameter("pwd");
 		
+		HttpSession session=((HttpServletRequest)request).getSession();
+		session.setAttribute("admin", admin);
+		
 		String sql = "select * from Admin where Admin='"+admin+"' and "+"Pwd='"+pwd+"'";
 		JDBCConnection db = new JDBCConnection();   
 		ResultSet rs= db.executeQuery(sql);
@@ -60,7 +64,7 @@ public class LoginServlet extends HttpServlet {
 			db.closeConnection();
 			return;
 		}else{
-			request.setAttribute("msg", "√‹¬Î¥ÌŒÛ«Î÷ÿ–¬ ‰»Î£°");  
+			//request.setAttribute("msg", "√‹¬Î¥ÌŒÛ«Î÷ÿ–¬ ‰»Î£°");  
 			rs.close();
 			db.closeConnection();
             //request.getRequestDispatcher("JSP/login.jsp").forward(request, response);

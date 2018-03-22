@@ -1,6 +1,8 @@
 package com.factory.filter;
 
 import java.io.IOException;
+import java.io.PrintWriter;
+
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;
 import javax.servlet.FilterConfig;
@@ -24,40 +26,27 @@ import javax.servlet.http.HttpSession;
 @WebFilter("/LoginFilter")
 public class LoginFilter implements Filter {
 
-    /**
-     * Default constructor. 
-     */
-    public LoginFilter() {
-        // TODO Auto-generated constructor stub
+	private FilterConfig filterConfig;
+
+    public void init(FilterConfig filterConfig) throws ServletException {
+        this.filterConfig = filterConfig;
     }
 
-	/**
-	 * @see Filter#destroy()
-	 */
-	public void destroy() {
-		// TODO Auto-generated method stub
-	}
 
-	/**
-	 * @see Filter#doFilter(ServletRequest, ServletResponse, FilterChain)
-	 */
-	public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain chain) throws IOException, ServletException {
-		// TODO Auto-generated method stub
-		// place your code here
-		HttpServletRequest request = (HttpServletRequest)servletRequest;
-		HttpServletResponse response = (HttpServletResponse)servletRequest;
-		
-		
+    public void doFilter(ServletRequest request, ServletResponse response,
+                         FilterChain filterChain) throws ServletException,IOException {
+       HttpSession session=((HttpServletRequest)request).getSession();
+       response.setCharacterEncoding("utf-8");
+       if(session.getAttribute("admin")==null){
+       PrintWriter out=response.getWriter();
+       
+       out.print("<script type=text/javascript>alert('please login');window.location.href='JSP/login.jsp';</script>");
+       }else{
+        filterChain.doFilter(request, response);
+       }
+    }
 
-		// pass the request along the filter chain
-		chain.doFilter(request, response);
-	}
-
-	/**
-	 * @see Filter#init(FilterConfig)
-	 */
-	public void init(FilterConfig fConfig) throws ServletException {
-		// TODO Auto-generated method stub
-	}
+    public void destroy() {
+    }
 
 }
