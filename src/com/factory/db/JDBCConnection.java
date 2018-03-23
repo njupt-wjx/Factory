@@ -88,13 +88,13 @@ import com.mysql.jdbc.Statement;
 		/**
 		 * 对数据库进行更新操作*/
 		public void updateDatabase(String sql){
-			Connection con = null;
+			
 			PreparedStatement pStmt = null;
 			if (conn==null){
 				createConnection();
 			}
 			try {
-				pStmt = con.prepareStatement(sql);
+				pStmt = conn.prepareStatement(sql);
 				pStmt.executeUpdate();
 				pStmt.close();
 			} catch (SQLException e) {
@@ -105,13 +105,13 @@ import com.mysql.jdbc.Statement;
 		/**
 		 * 对数据库进行删除操作*/
 		public void deleteDatabase(String sql){
-			Connection con = null;
+			
 			PreparedStatement pStmt = null;
 			if (conn==null){
 				createConnection();
 			}
 			try {
-				pStmt = con.prepareStatement(sql);
+				pStmt = conn.prepareStatement(sql);
 				pStmt.executeUpdate();
 				pStmt.close();
 			} catch (SQLException e) {

@@ -13,7 +13,7 @@
 <link rel="stylesheet" type="text/css" href="CSS/style.css">
 </head> 
 
-<body>
+<body >
 		<form name="form" action="" method="post" >
 			<table background="images/bj.JPG" border="0" width="333" height="218" cellpadding="1" cellspacing="1" align="center">
 				<tr>
