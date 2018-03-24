@@ -13,7 +13,7 @@
 
 </head>
 
-<script type="text/javascript" src="js/my.js"></script>
+<script type="text/javascript" src="JS/checkForm.js"></script>
 <body >
 	<table width="1014" height="706" border="1" align="center" cellpadding="0" cellspacing="0" background="">
   <tr>
@@ -28,24 +28,24 @@
 			
                 <tr>
                   <td width="200" height="30"><div align="center">用户名：</div></td>
-                  <td colspan="3">&nbsp;<input type="text" name="recuser" size="20" class="inputcss" onBlur="chkreginfo(form_reg,0)"><div id="chknew_recuser" style="color:#FF0000"></div></td>
+                  <td colspan="3">&nbsp;<input type="text" name="recuser" size="20" class="inputcss" onBlur="checkRegForm(form_reg,0)"><div id="chknew_recuser" style="color:#FF0000"></div></td>
                 </tr>
 				
                 <tr>
                   <td height="30"><div align="center">详细联系地址：</div></td>
-                  <td height="30" colspan="3">&nbsp;<input type="text" name="address" size="60" class="inputcss" onBlur="chkreginfo(form_reg,1)"><div id="chknew_address" style="color:#FF0000"></div></td>
+                  <td height="30" colspan="3">&nbsp;<input type="text" name="address" size="60" class="inputcss" onBlur="checkRegForm(form_reg,1)"><div id="chknew_address" style="color:#FF0000"></div></td>
                 </tr>
                 <tr>
                   <td height="30"><div align="center">邮政编码：</div></td>
-                  <td height="30" colspan="3">&nbsp;<input type="text" name="postalcode" size="20" class="inputcss" onBlur="chkreginfo(form_reg,2)"><div id="chknew_postalcode" style="color:#FF0000"></div></td>
+                  <td height="30" colspan="3">&nbsp;<input type="text" name="postalcode" size="20" class="inputcss" onBlur="checkRegForm(form_reg,2)"><div id="chknew_postalcode" style="color:#FF0000"></div></td>
                 </tr>
 				<tr>
                   <td height="30"><div align="center">QQ号码：</div></td>
-                  <td height="30" colspan="3">&nbsp;<input type="text" name="qq" size="20" class="inputcss" onBlur="chkreginfo(form_reg,3)"><div id="chknew_qq" style="color:#FF0000"></div></td>
+                  <td height="30" colspan="3">&nbsp;<input type="text" name="qq" size="20" class="inputcss" onBlur="checkRegForm(form_reg,3)"><div id="chknew_qq" style="color:#FF0000"></div></td>
                 </tr>
 				<tr>
                   <td height="30"><div align="center">E-mail：</div></td>
-                  <td height="30" colspan="3">&nbsp;<input type="text" name="email" size="20" class="inputcss" onBlur="chkreginfo(form_reg,4)"><div id="chknew_email" style="color:#FF0000"></div></td>
+                  <td height="30" colspan="3">&nbsp;<input type="text" name="email" size="20" class="inputcss" onBlur="checkRegForm(form_reg,4)"><div id="chknew_email" style="color:#FF0000"></div></td>
                 </tr>
                 <tr>
                   <td height="30">&nbsp;</td>
@@ -53,9 +53,9 @@
 				</tr>
                 <tr>
                   <td height="30"><div align="center">移动电话：</div></td>
-                  <td width="200" >&nbsp;<input  align="middle" type="text" name="mtel" size="20" class="inputcss" onBlur="chkreginfo(form_reg,5)"><div id="chknew_mtel" style="color:#FF0000"></div></td>
+                  <td width="200" >&nbsp;<input  align="middle" type="text" name="mtel" size="20" class="inputcss" onBlur="checkRegForm(form_reg,5)"><div id="chknew_mtel" style="color:#FF0000"></div></td>
                   <td width="200"><div align="center">固定电话：</div></td>
-                  <td width="343">&nbsp;<input type="text" name="gtel" size="20" class="inputcss" onBlur="chkreginfo(form_reg,6)"><div id="chknew_gtel" style="color:#FF0000"></div></td>
+                  <td width="343">&nbsp;<input type="text" name="gtel" size="20" class="inputcss" onBlur="checkRegForm(form_reg,6)"><div id="chknew_gtel" style="color:#FF0000"></div></td>
                 </tr>
                 <tr>
                   <td height="30">&nbsp;</td>

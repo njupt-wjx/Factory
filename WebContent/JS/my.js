@@ -1,3 +1,6 @@
+/**
+ * 正则验证手机号码格式*/
+
 function checkregtel(regtel){
     var str=regtel;
     var Expression=/^13(\d{9})$|^15(\d{9})$/;
@@ -12,6 +15,8 @@ function checkregtel(regtel){
 
 
 
+/**
+ * 验证座机号码格式*/
 
 function checkregtels(regtels){
     var str=regtels;
@@ -24,14 +29,28 @@ function checkregtels(regtels){
     }
 }
 
+/**
+ * 验证电子邮件格式*/
+function checkregemail(emails){
+    var str=emails;
+    var Expression=/\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*/;
+    var objExp=new RegExp(Expression);
+        if(objExp.test(str)==true){
+            return true;
+        }else{
+            return false;
+        }
+}
 
-function chkreginfo(form,mark,edit){
+/**
+ * 对表单中用户提交的数据进行判断*/
+function chkreginfo(form,mark){
 
 
     if(mark==0 || mark=="all"){
         if(form.recuser.value==""){
-            chknew_recuser.innerHTML="请输入用户名！";
-            form.recuser.style.backgroundColor="#FF0000";
+            document.getElementById("chknew_recuser").innerHTML="请输入用户名！";
+            form.recuser.style.backgroundColor="blue";
             return false;
         }else{
             chknew_recuser.innerHTML="";
