@@ -37,10 +37,11 @@ public class LoginFilter implements Filter {
                          FilterChain filterChain) throws ServletException,IOException {
        HttpSession session=((HttpServletRequest)request).getSession();
        response.setCharacterEncoding("utf-8");
+       HttpServletResponse httpServletResponse = (HttpServletResponse)response;
        if(session.getAttribute("admin")==null){
        PrintWriter out=response.getWriter();
-       
-       out.print("<script type=text/javascript>alert('please login');window.location.href='JSP/login.jsp';</script>");
+       httpServletResponse.sendRedirect("/Factory/JSP/login.jsp");
+       //out.print("<script type=text/javascript>alert('please login');window.location.href='/JSP/login.jsp';</script>");
        }else{
         filterChain.doFilter(request, response);
        }
