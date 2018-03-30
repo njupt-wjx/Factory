@@ -12,7 +12,7 @@
 <title>欢迎登录细纱机管理系统</title>
 <link rel="stylesheet" type="text/css" href="CSS/style.css">
 </head> 
-
+<script type="text/javascript" src="JS/AjaxRequest.js"></script>
 <script  type="text/javascript">
 	function checkEmpty(form){
 		for(i=0;i<form.length;i++){
@@ -22,6 +22,27 @@
 			}
 		}
 }
+	
+	function checkAdmin(){
+		var admin = form.admin.value;
+		if(admin=="") {
+			window.alert("请填写用户名!");
+			form.admin.focus();
+			return false;
+		}else{
+		var loader=new net.AjaxRequest("JSP/checkAdmin.jsp?admin="+admin+"&nocache="+new Date().getTime(),deal,onerror,"GET");
+		}
+	}
+	
+	//错误处理函数
+	function onerror(){
+		alert("出错了！");
+	}
+	//回调函数
+	function deal(){
+		//alert(this.req.responseText);
+		admindiv.innerHTML = this.req.responseText;
+	}
 </script>
 
 <body bgcolor="#BFEFFF">
@@ -36,7 +57,7 @@
 				</tr>
 				<tr>
 					<td align="center">管理员：</td>
-					<td align="left"><input name="admin" type="text" size="20"></td>
+					<td align="left"><input name="admin" type="text" size="20" onblur="checkAdmin()"><div id="admindiv"></div></td>
 				</tr> 
 				 
 				<tr>

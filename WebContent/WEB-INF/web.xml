@@ -22,4 +22,14 @@
     <filter-name>LoginFilter</filter-name>
     <url-pattern>/JSP/processPara.jsp</url-pattern>
   </filter-mapping> -->
+  
+  <servlet>
+         <servlet-name>DisplayChart</servlet-name>
+         <servlet-class>org.jfree.chart.servlet.DisplayChart</servlet-class>
+     </servlet>
+     <servlet-mapping>
+            <servlet-name>DisplayChart</servlet-name>
+            <url-pattern>/servlet/DisplayChart</url-pattern>
+      </servlet-mapping> 
+  
 </web-app>

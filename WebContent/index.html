@@ -1,11 +1,106 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!--<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />-->
 <title>细纱机管理系统</title>
 </head>
-<body>
- 	<p>欢迎来到细纱机管理系统！</p>
- 	<a href="JSP/processPara.jsp"><img alt="工艺参数" src="images/dog.gif" border="0" width="20" height="20">工艺参数</a>
+<script src="JS/onclock.JS" type="text/javascript" charset="utf-8"></script>
+<script src="JS/menu.JS" type="text/javascript" charset="utf-8"></script>
+
+<body onLoad="clockon(bgclock)">
+<table width="778" border="1" align="center" cellpadding="0" cellspacing="0" >
+  <tr>
+    <td height="183">
+	
+<div class=menuskin id=popmenu
+      onmouseover="clearhidemenu();highlightmenu(event,'on')"
+      onmouseout="highlightmenu(event,'off');dynamichide(event)" style="Z-index:100;position:absolute;"></div>
+<table width="1000" border="1" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td height="150" valign="top" background="" bgcolor="#EEEEEE"><table width="100%" height="53"  border="0" cellpadding="0" cellspacing="0">
+      <tr>
+        <td width="74%" height="18">&nbsp;</td>
+        <td colspan="4">&nbsp;</td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        
+        <td width="11%"><a href="#" onClick="window.location.reload();">刷新页面</a></td>
+		<script language="javascript">
+			function myclose(){
+				if(confirm("真的要关闭当前窗口吗?")){
+					window.close();
+				}
+			}
+		</script>
+        <td width="15%"><a href="#" onClick="myclose()" >关闭系统</a></td>
+      </tr>
+    </table>
+      <table width="98%" height="93"  border="0" cellpadding="0" cellspacing="0">
+        <tr>
+          <td align="left" valign="bottom" class="word_Green">细纱机管理系统</td>
+        </tr>
+      </table></td>
+  </tr>
+  <tr>
+    <td height="33" align="right" background="" bgcolor="#EEEEEE"><table width="100%"  border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td width="3%">&nbsp;</td>
+        <td width="28%"><div id="bgclock" class="word_Green"></div></td>
+		<script language="javascript">
+			function quit(){
+				if(confirm("真的要退出系统吗?")){
+					window.location.href="logout.jsp";
+				}
+			}
+		</script>
+        <td width="90%" align="right"><a href="main.jsp">首页</a>┊<a  onmouseover=showmenu(event,sysmenu) onmouseout=delayhidemenu() class='navlink' style="CURSOR:hand" >运行状况</a>┊
+          <a  onmouseover=showmenu(event,readermenu) onmouseout=delayhidemenu() class='navlink'
+		   style="CURSOR:hand" >生产状况</a>┊
+          <a  onmouseover=showmenu(event,bookmenu) onmouseout=delayhidemenu() class='navlink' style="CURSOR:hand" >员工信息</a>┊
+          <a  onmouseover=showmenu(event,borrowmenu) onmouseout=delayhidemenu() class='navlink' style="CURSOR:hand" >数据库维护</a>┊
+          <a  onmouseover=showmenu(event,querymenu) onmouseout=delayhidemenu() class='navlink' style="CURSOR:hand" >系统管理</a>┊
+          <a  onmouseover=showmenu(event,sortmenu) onmouseout=delayhidemenu() class='navlink' style="CURSOR:hand" >帮助</a>┊
+          <a  onmouseover=showmenu(event,aboutmenu) onmouseout=delayhidemenu() class='navlink' style="CURSOR:hand" >关于</a>┊
+          <a href="#" onClick="quit()">退出系统</a></td>
+        <td width="2%">&nbsp;</td>
+      </tr>
+    </table></td>
+  </tr>
+</table>
+	</td>
+	</tr>
+	<td bgcolor="#FFFFFF">
+	<table width="100%"  border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td valign="top" bgcolor="#FFFFFF"><table width="99%" height="180"  border="0" align="center" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF" class="tableBorder_gray">
+  <tr>
+    <td height="178" align="center" valign="top" style="padding:5px;">&nbsp;</td>
+  </tr>
+</table></td>
+  </tr>
+</table>
+<table width="99%" height="72"  border="0" align="center" cellpadding="-2" cellspacing="-2">
+      <tr>
+        <td height="2" colspan="4"></td>
+        </tr>
+      <tr>
+        <td width="124" height="23">&nbsp;</td>
+        <td align="center" valign="bottom" > CopyRight &copy;  南京邮电大学</td>
+        <td width="141">&nbsp;</td>
+      </tr>
+      <tr>
+        <td height="28">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td height="8"></td>
+        <td height="8"></td>
+        <td height="8"></td>
+      </tr>
+    </table></td>
+  </tr>
+</table>
 </body>
 </html>
