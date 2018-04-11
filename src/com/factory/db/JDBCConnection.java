@@ -102,6 +102,28 @@ import com.mysql.jdbc.Statement;
 			}
 		}
 		
+		////////////////////////////////////////////////////
+		
+		/**
+		 * 查询指定数据库的表名
+		 * @param sql:sql脚本
+		 */
+		public ResultSet getTables(String sql) throws SQLException{
+			ResultSet rs = null;
+		    Statement stmt = null;
+		    if (conn==null){
+				createConnection();
+			}
+			try {
+				stmt = (Statement) conn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE,ResultSet.CONCUR_UPDATABLE);
+				rs = stmt.executeQuery(sql);
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+			return rs;
+		}
+		///////////////////////////////////////////////////
+		
 		/**
 		 * 对数据库进行删除操作*/
 		public void deleteDatabase(String sql){

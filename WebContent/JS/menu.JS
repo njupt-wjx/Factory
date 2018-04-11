@@ -1,4 +1,6 @@
-﻿var menuOffX=0;		//菜单距连接文字最左端距离
+﻿
+
+var menuOffX=0;		//菜单距连接文字最左端距离
 var menuOffY=18;	//菜单距连接文字顶端距离
 var fo_shadows=new Array();
 var linkset=new Array();
@@ -135,19 +137,19 @@ tdbg.style.border=''
 }
 var sysmenu='<table  width=80><tr><td bgcolor=#B3EE3A id=operationCondition onMouseOver=overbg(operationCondition) onMouseOut=outbg(operationCondition)><a href=#>细纱机运行状况</a></td></tr>\
 <tr><td  bgcolor=#B3EE3A id=manager onMouseOver=overbg(manager) onMouseOut=outbg(manager)><a href=#>早晚班运行状况</a></td></tr>\
-<tr><td bgcolor=#B3EE3A id=para onMouseOver=overbg(para) onMouseOut=outbg(para)><a href=#>工艺参数</a></td></tr>\
+<tr><td bgcolor=#B3EE3A id=para onMouseOver=overbg(para) onMouseOut=outbg(para)><a href=JSP/processPara.jsp>工艺参数</a></td></tr>\
 </table>'
 var readermenu='<table width=80><tr><td bgcolor=#B3EE3A id=readerType onMouseOver=overbg(readerType) onMouseOut=outbg(readerType)><a href=#>每日生产状况记录</a></td></tr>\
 </table>'
-var bookmenu='<table width=80><tr><td bgcolor=#B3EE3A id=bookType onMouseOver=overbg(bookType) onMouseOut=outbg(bookType)><a href=#>基础信息</a></td></tr>\
+var bookmenu='<table width=80><tr><td bgcolor=#B3EE3A id=bookType onMouseOver=overbg(bookType) onMouseOut=outbg(bookType)><a href=emplinfo.html>基础信息</a></td></tr>\
 </table>'
-var borrowmenu='<table width=80><tr><td bgcolor=#B3EE3A id=Borrow onMouseOver=overbg(Borrow) onMouseOut=outbg(Borrow)><a href=#>清空6个月前数据</a></td></tr>\
+var borrowmenu='<table width=80><tr><td bgcolor=#B3EE3A id=Borrow onMouseOver=overbg(Borrow) onMouseOut=outbg(Borrow)><a href=JSP/emptydb.jsp>清空数据库</a></td></tr>\
 </table>'
-var querymenu='<table width=80><tr><td bgcolor=#B3EE3A id=bookQuery onMouseOver=overbg(bookQuery) onMouseOut=outbg(bookQuery)><a href=#>重新登录</a></td></tr>\
+var querymenu='<table width=80><tr><td bgcolor=#B3EE3A id=bookQuery onMouseOver=overbg(bookQuery) onMouseOut=outbg(bookQuery)><a href=JSP/login.jsp>重新登录</a></td></tr>\
 <tr><td bgcolor=#B3EE3A id=borrowQuery onMouseOver=overbg(borrowQuery) onMouseOut=outbg(borrowQuery)><a href=#>用户设置</a></td></tr>\
-<tr><td bgcolor=#B3EE3A id=givebackQuery onMouseOver=overbg(givebackQuery) onMouseOut=outbg(givebackQuery)><a href=#>系统退出</a></td></tr>\
+<tr><td bgcolor=#B3EE3A id=givebackQuery onMouseOver=overbg(givebackQuery) onMouseOut=outbg(givebackQuery)><a href=JSP/login.jsp>系统退出</a></td></tr>\
 </table>'
 var sortmenu='<table width=80><tr><td bgcolor=#B3EE3A id=readerSort onMouseOver=overbg(readerSort) onMouseOut=outbg(readerSort)><a href=help.html>系统帮助</a></td></tr>\
 </table>'
-var aboutmenu='<table width=80><tr><td bgcolor=#B3EE3A id=aboutmenu onMouseOver=overbg(aboutmenu) onMouseOut=outbg(aboutmenu)><a href=#>关于</a></td></tr>\
+var aboutmenu='<table width=80><tr><td bgcolor=#B3EE3A id=aboutmenu onMouseOver=overbg(aboutmenu) onMouseOut=outbg(aboutmenu)><a href=about.html>关于</a></td></tr>\
 </table>'

@@ -9,27 +9,12 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
-  
-  <!-- <filter>
-    <filter-name>LoginFilter</filter-name>
-    <filter-class>com.factory.filter.LoginFilter</filter-class>
-  </filter>
-  <filter-mapping>
-    <filter-name>LoginFilter</filter-name>
-    <url-pattern>/index.html</url-pattern>
-  </filter-mapping>
-  <filter-mapping>
-    <filter-name>LoginFilter</filter-name>
-    <url-pattern>/JSP/processPara.jsp</url-pattern>
-  </filter-mapping> -->
-  
   <servlet>
-         <servlet-name>DisplayChart</servlet-name>
-         <servlet-class>org.jfree.chart.servlet.DisplayChart</servlet-class>
-     </servlet>
-     <servlet-mapping>
-            <servlet-name>DisplayChart</servlet-name>
-            <url-pattern>/servlet/DisplayChart</url-pattern>
-      </servlet-mapping> 
-  
+    <servlet-name>DisplayChart</servlet-name>
+    <servlet-class>org.jfree.chart.servlet.DisplayChart</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DisplayChart</servlet-name>
+    <url-pattern>/servlet/DisplayChart</url-pattern>
+  </servlet-mapping>
 </web-app>

@@ -53,11 +53,6 @@ public class TimeSeriesUtil {
                 + " and " + "'" + "2018-01-06" + " 19:30:00" + "'";
     	JDBCConnection db = new JDBCConnection();   
     	ResultSet rs= db.executeQuery(sql);
-    	List<Integer> dingSpeed = new ArrayList<>();
-		List<Integer> qianSpeed = new ArrayList<>();
-		List<String> date = new ArrayList<>();
-		List<Integer> date1 = new ArrayList<>();
-		
 		double hour=0.0;
 		double   min =0.0;
     	while (rs.next()) {
@@ -148,9 +143,9 @@ public class TimeSeriesUtil {
         renderer.setBasePositiveItemLabelPosition(new ItemLabelPosition(ItemLabelAnchor.OUTSIDE12,TextAnchor.BASELINE_LEFT));
         renderer.setItemLabelFont(new Font("黑体", Font.PLAIN, 14));// 设置数字的字体大小
 */      
-        renderer.setToolTipGenerator(new StandardXYToolTipGenerator(
+       /* renderer.setToolTipGenerator(new StandardXYToolTipGenerator(
         		"{1}={2}", new SimpleDateFormat("MM-dd"),
-        		new SimpleDateFormat("MM-dd")));
+        		new SimpleDateFormat("MM-dd")));*/
         return chart;
 	}
 	}
