@@ -45,12 +45,12 @@ import javafx.scene.chart.ValueAxis;
 
 public class TimeSeriesUtil {
 	
-	private static XYDataset getDataset() throws SQLException{
+	private static XYDataset getDataset(String sql) throws SQLException{
 		XYSeriesCollection dataset = new XYSeriesCollection(); //创建时序图表的数据集合
         XYSeries dingTimeSeries = new XYSeries("锭速");//A股数据对象
         XYSeries qianTimeSeries = new XYSeries("前罗拉");//B股数据对象
-        String sql = "select dingSpeed,Speed2,Date from M13"+" where Date between" + "'" + "2018-01-06" + " 07:30:00" + "'"
-                + " and " + "'" + "2018-01-06" + " 19:30:00" + "'";
+        //String sql = "select dingSpeed,Speed2,Date from M13"+" where Date between" + "'" + "2018-01-06" + " 07:30:00" + "'"
+        //        + " and " + "'" + "2018-01-06" + " 19:30:00" + "'";
     	JDBCConnection db = new JDBCConnection();   
     	ResultSet rs= db.executeQuery(sql);
 		double hour=0.0;
@@ -63,6 +63,7 @@ public class TimeSeriesUtil {
     		hour = Double.parseDouble(rs.getString("Date").substring(11, 13));
     		min =Double.parseDouble(rs.getString("Date").substring(14, 16))/60;
     		hour += min;
+    		//if(hour>=0&&hour<=7.5)hour+=24;
     		dingTimeSeries.add(hour,rs.getInt("dingSpeed"));
     		qianTimeSeries.add(hour,rs.getInt("Speed2"));
     		
@@ -83,7 +84,7 @@ public class TimeSeriesUtil {
 		return dataset;
   }
 	
-	public static JFreeChart createLineChart() throws SQLException{
+	public static JFreeChart createLineChart(String sql) throws SQLException{
 		StandardChartTheme standardChartTheme = new StandardChartTheme("CN");  //创建主题样式
         standardChartTheme.setExtraLargeFont(new Font("隶书", Font.BOLD, 20));    //设置标题字体
         standardChartTheme.setRegularFont(new Font("宋体", Font.PLAIN, 15));        //设置图例的字体
@@ -93,7 +94,7 @@ public class TimeSeriesUtil {
                      "运行状况",                //标题
                      "时间",                                 //横轴标题
                      "转速",                //纵轴标题
-                      getDataset(),                      //数据集合
+                      getDataset(sql),                      //数据集合
                      PlotOrientation.VERTICAL,    //图表方向
                      true,                              //是否显示图例标识
                      true,                              //是否显示toolTips
@@ -104,12 +105,12 @@ public class TimeSeriesUtil {
         chart.getLegend().setItemFont(new Font("黑体",Font.PLAIN,12));
         chart.setBorderVisible(true);   //设置显示边框
         //实例化TextTitle对象
-        TextTitle subTitle = new TextTitle("早班");
+        /*TextTitle subTitle = new TextTitle("早班");
         //设置居中显示
         subTitle.setVerticalAlignment(VerticalAlignment.BOTTOM);
         subTitle.setFont(new Font("隶书",Font.BOLD,18));
         chart.addSubtitle(subTitle);    //添加子标题
-        
+        */
         //绘图区对象
         XYPlot plot = chart.getXYPlot();
         plot.setBackgroundPaint(Color.WHITE);
