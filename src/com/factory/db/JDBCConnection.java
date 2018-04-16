@@ -17,8 +17,9 @@ import com.mysql.jdbc.Statement;
 	public class JDBCConnection {
 		private static final String dbDriver = "com.mysql.jdbc.Driver";
 		private static final String url = "jdbc:mysql://localhost:3306/db_factory";
+		//private static final String url = "jdbc:mysql://39.106.38.93:3306/db_factory";
 		private static final String user = "root";
-		private static final String pwd = "123456";
+		private static final String pwd = "12345678";
 		private Connection conn = null;
 		
 		/**

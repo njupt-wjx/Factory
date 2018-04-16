@@ -135,8 +135,7 @@ function outbg(tdbg){
 tdbg.style.background='url(Images/item_out.gif)'
 tdbg.style.border=''
 }
-var sysmenu='<table  width=80><tr><td bgcolor=#B3EE3A id=operationCondition onMouseOver=overbg(operationCondition) onMouseOut=outbg(operationCondition)><a href=#>细纱机运行状况</a></td></tr>\
-<tr><td  bgcolor=#B3EE3A id=manager onMouseOver=overbg(manager) onMouseOut=outbg(manager)><a href=#>早晚班运行状况</a></td></tr>\
+var sysmenu='<table  width=80><tr><td bgcolor=#B3EE3A id=operationCondition onMouseOver=overbg(operationCondition) onMouseOut=outbg(operationCondition)><a href=JSP/day&night.jsp>细纱机运行状况</a></td></tr>\
 <tr><td bgcolor=#B3EE3A id=para onMouseOver=overbg(para) onMouseOut=outbg(para)><a href=JSP/processPara.jsp>工艺参数</a></td></tr>\
 </table>'
 var readermenu='<table width=80><tr><td bgcolor=#B3EE3A id=readerType onMouseOver=overbg(readerType) onMouseOut=outbg(readerType)><a href=JSP/daily.jsp>每日生产状况</a></td></tr>\

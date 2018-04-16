@@ -38,18 +38,17 @@ public class NameServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		//response.getWriter().append("Served at: ").append(request.getContextPath());
+		
 		String name= request.getParameter("name");
-		PrintWriter out = response.getWriter();
-		
-		out.print("<html><head>");
-		out.print(name);
-		out.print("</body></head></html>");
 		
 		
-		String sql = "insert into user (UserName) values('"+name.toString()+"')";
+		
+		
+		
+		/*String sql = "insert into user (UserName) values('"+name.toString()+"')";
 		JDBCConnection db = new JDBCConnection();   
 		db.insert2Database(sql);
-		db.closeConnection();
+		db.closeConnection();*/
 		
 		
 		System.out.println("name from POST method: " + name );
